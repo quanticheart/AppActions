@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Actions App</string>
+
+    <string name="click_to_open_app">Click to open app</string>
+
+    <string name="feature_1">feature 1</string>
+    <string name="feature_2">feature 2</string>
+    <string name="feature_3">feature 3</string>
+    <string name="feature_4">feature 4</string>
+
+    <string name="title_feature_1">title 1</string>
+    <string name="title_feature_2">title 2</string>
+    <string name="title_feature_3">title 3</string>
+    <string name="title_feature_4">title 4</string>
+
+    <string name="subtitle_feature_1">this is feature 1</string>
+    <string name="subtitle_feature_2">this is feature 2</string>
+    <string name="subtitle_feature_3">this is feature 3</string>
+    <string name="subtitle_feature_4">this is feature 4</string>
+
+    <string name="feature_one">one</string>
+    <string name="feature_two">two</string>
+    <string name="feature_three">three</string>
+    <string name="feature_four">four</string>
+</resources>

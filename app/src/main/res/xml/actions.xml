@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actions>
+
+    <action intentName="actions.intent.OPEN_APP_FEATURE">
+
+        <fulfillment
+                fulfillmentMode="actions.fulfillment.SLICE"
+                urlTemplate="content://com.quanticheart.appactionsapp/{featureName}">
+            <parameter-mapping
+                    intentParameter="feature"
+                    required="true"
+                    urlParameter="featureName" />
+        </fulfillment>
+
+        <fulfillment
+                fulfillmentMode="actions.fulfillment.DEEPLINK"
+                urlTemplate="https://www.my.url.br/open{?featureName}">
+            <parameter-mapping
+                    intentParameter="feature"
+                    urlParameter="featureName" />
+        </fulfillment>
+
+    </action>
+
+</actions>
