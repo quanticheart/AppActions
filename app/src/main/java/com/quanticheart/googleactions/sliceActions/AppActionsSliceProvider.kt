@@ -9,6 +9,7 @@ import androidx.slice.builders.list
 import androidx.slice.builders.row
 import com.quanticheart.googleactions.MainActivity
 import com.quanticheart.googleactions.R
+import com.quanticheart.googleactions.activity.FeatureFourActivity
 import com.quanticheart.googleactions.activity.FeatureOneActivity
 import com.quanticheart.googleactions.activity.FeatureThreeActivity
 import com.quanticheart.googleactions.activity.FeatureTwoActivity
@@ -61,15 +62,11 @@ class AppActionsSliceProvider : SliceProvider() {
                             R.drawable.image_leaf
                         )
                     }
-                else -> {
+                "/${context.resources.getString(R.string.feature_four)}" -> {
                     context.launchFeature(sliceUri.path?.replace("/", "") ?: "")
-                    list(context, sliceUri, ListBuilder.INFINITY) {
-                        row {
-                            title =
-                                DEFAULT_TITLE
-                        }
-                    }
+                    null
                 }
+                else -> null
             }
         }
     }

@@ -29,6 +29,7 @@
         <item>UMM</item>
         <item>UM</item>
         <item>uma</item>
+        <item>1</item>
     </string-array>
 
     <string-array name="feature_two">
@@ -37,6 +38,7 @@
         <item>dois</item>
         <item>Does</item>
         <item>does</item>
+        <item>2</item>
     </string-array>
 
     <string-array name="feature_three">
@@ -45,6 +47,7 @@
         <item>TRES</item>
         <item>Tres</item>
         <item>três</item>
+        <item>3</item>
     </string-array>
 
     <string-array name="feature_four">
@@ -53,6 +56,8 @@
         <item>Quatros</item>
         <item>Cuatro</item>
         <item>cuatru</item>
+        <item>4</item>
+        <item>tela de teste</item>
     </string-array>
 
 </resources>
