@@ -41,7 +41,7 @@ class AppActionsSliceProvider : SliceProvider() {
                     context.getFeature<FeatureTwoActivity>()
                 )
                     ?.let {
-                        context.buildFeatureSlice(
+                        context.buildFeatureSliceGlide(
                             sliceUri,
                             it,
                             R.string.title_feature_2,
@@ -61,10 +61,13 @@ class AppActionsSliceProvider : SliceProvider() {
                             R.drawable.image_leaf
                         )
                     }
-                else -> list(context, sliceUri, ListBuilder.INFINITY) {
-                    row {
-                        title =
-                            DEFAULT_TITLE
+                else -> {
+                    context.launchFeature(sliceUri.path?.replace("/", "") ?: "")
+                    list(context, sliceUri, ListBuilder.INFINITY) {
+                        row {
+                            title =
+                                DEFAULT_TITLE
+                        }
                     }
                 }
             }

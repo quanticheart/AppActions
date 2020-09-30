@@ -5,7 +5,7 @@
 
         <fulfillment
                 fulfillmentMode="actions.fulfillment.SLICE"
-                urlTemplate="content://com.quanticheart.appactionsapp/{featureName}">
+                urlTemplate="content://com.quanticheart.googleactions/{featureName}">
             <parameter-mapping
                     intentParameter="feature"
                     required="true"
@@ -20,6 +20,28 @@
                     urlParameter="featureName" />
         </fulfillment>
 
+        <parameter name="feature">
+            <entity-set-reference entitySetId="RecipeEntitySet" />
+        </parameter>
+
     </action>
 
+    <entity-set entitySetId="RecipeEntitySet">
+        <entity
+                name="@string/feature_one"
+                alternateName="@array/feature_one"
+                identifier="@string/feature_one" />
+        <entity
+                name="@string/feature_two"
+                alternateName="@array/feature_two"
+                identifier="@string/feature_two" />
+        <entity
+                name="@string/feature_three"
+                alternateName="@array/feature_three"
+                identifier="@string/feature_three" />
+        <entity
+                name="@string/feature_four"
+                alternateName="@array/feature_four"
+                identifier="@string/feature_four" />
+    </entity-set>
 </actions>

@@ -1,5 +1,6 @@
 package com.quanticheart.googleactions.sliceActions
 
+//import com.bumptech.glide.Glide
 import android.app.Activity
 import android.app.PendingIntent
 import android.content.ContentResolver
@@ -12,6 +13,7 @@ import androidx.annotation.StringRes
 import androidx.core.graphics.drawable.IconCompat
 import androidx.slice.SliceManager
 import androidx.slice.builders.*
+import com.bumptech.glide.Glide
 import com.quanticheart.googleactions.R
 import com.quanticheart.googleactions.activity.FeatureFourActivity
 import com.quanticheart.googleactions.activity.FeatureOneActivity
@@ -74,13 +76,58 @@ fun Context.buildFeatureSlice(
     }
 }
 
+fun Context.buildFeatureSliceGlide(
+    sliceUri: Uri,
+    action: SliceAction,
+    @StringRes titleRes: Int,
+    @StringRes subtitleRes: Int,
+    @DrawableRes imageRes: Int
+) = list(this, sliceUri, ListBuilder.INFINITY) {
+    header {
+        setTitle(resources.getString(titleRes).toUpperCase(Locale.getDefault()), false)
+        subtitle = resources.getString(titleRes).toUpperCase(Locale.getDefault())
+        summary = resources.getString(titleRes).toUpperCase(Locale.getDefault())
+        primaryAction = action
+    }
+    gridRow {
+        cell {
+            val bitmap = Glide.with(this@buildFeatureSliceGlide)
+                .asBitmap()
+                .load("https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/1200px-025Pikachu.png")
+                .submit()
+                .get()
+            val image = IconCompat.createWithBitmap(bitmap)
+            addImage(image, ListBuilder.LARGE_IMAGE)
+        }
+    }
+    row {
+        title = resources.getString(titleRes).toUpperCase(Locale.getDefault())
+        subtitle = resources.getString(subtitleRes)
+        primaryAction = action
+    }
+}
+
+fun createLoadingSlice(context: Context, sliceUri: Uri) =
+    list(context, sliceUri, ListBuilder.INFINITY) {
+        header {
+            setTitle("Loading", true)
+        }
+    }
+
+fun createErrorSlice(context: Context, sliceUri: Uri) =
+    list(context, sliceUri, ListBuilder.INFINITY) {
+        header {
+            setTitle("Error", true)
+        }
+    }
+
 /**
  * Slice Permissions
  */
 fun Context.grantSlicePermissions() {
     val sliceProviderUri = Uri.Builder().apply {
         scheme(ContentResolver.SCHEME_CONTENT)
-        authority(applicationContext.packageName)
+        authority("com.quanticheart.googleactions")
     }.build()
 
     val assistantPackage = applicationContext.packageManager.queryIntentServices(

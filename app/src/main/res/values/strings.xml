@@ -22,4 +22,37 @@
     <string name="feature_two">two</string>
     <string name="feature_three">three</string>
     <string name="feature_four">four</string>
+
+    <string-array name="feature_one">
+        <item>um</item>
+        <item>hum</item>
+        <item>UMM</item>
+        <item>UM</item>
+        <item>uma</item>
+    </string-array>
+
+    <string-array name="feature_two">
+        <item>duas</item>
+        <item>Duas</item>
+        <item>dois</item>
+        <item>Does</item>
+        <item>does</item>
+    </string-array>
+
+    <string-array name="feature_three">
+        <item>tres</item>
+        <item>treis</item>
+        <item>TRES</item>
+        <item>Tres</item>
+        <item>três</item>
+    </string-array>
+
+    <string-array name="feature_four">
+        <item>quatro</item>
+        <item>quatru</item>
+        <item>Quatros</item>
+        <item>Cuatro</item>
+        <item>cuatru</item>
+    </string-array>
+
 </resources>
